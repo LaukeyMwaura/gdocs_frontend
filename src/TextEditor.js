@@ -28,12 +28,7 @@ function TextEditor() {
 
   
   useEffect(() => {
-    const s = io("https://gdocs-vic.herokuapp.com/", {
-      cors: {
-        origin: "https://gdocs-vic.herokuapp.com/",
-        methods: ["GET", "POST"],
-      },
-    });
+    const s = io("https://cors-anywhere.herokuapp.com/https://gdocs-vic.herokuapp.com");
     setSocket(s);
     return () => {
       s.disconnect();
